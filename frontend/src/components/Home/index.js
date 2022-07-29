@@ -45,7 +45,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <Banner items={this.props.items} />
+        <Banner />
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
