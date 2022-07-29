@@ -2,12 +2,9 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import logo from "../../imgs/logo.png";
-import {
-  APPLY_TITLE_FILTER,
-} from "../../constants/actionTypes";
+import { APPLY_TITLE_FILTER } from "../../constants/actionTypes";
 
-const mapStateToProps = (state) => ({
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   onTitleChanged: (title, pager, payload) =>
@@ -15,21 +12,22 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class Banner extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state = {title: '' };
+    this.state = { title: "" };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    let title = event.target.value
-    this.setState({title: title})
-  
+    let title = event.target.value;
+    this.setState({ title: title });
+
     if (this.state.title.length > 2) {
-      this.props.onTitleChanged(this.state.title,
+      this.props.onTitleChanged(
+        this.state.title,
         (page) => agent.Items.byTitle(this.state.title, page),
-        agent.Items.byTitle(this.state.title))
+        agent.Items.byTitle(this.state.title)
+      );
     }
   }
 
@@ -40,7 +38,12 @@ class Banner extends React.Component {
           <img src={logo} alt="banner" />
           <div>
             <span id="get-part">A place to get</span>
-      <input id="search-box" type="text" value={this.state.title} onChange={this.handleChange} />
+            <input
+              id="search-box"
+              type="text"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
             <span> the cool stuff.</span>
           </div>
         </div>
@@ -49,4 +52,4 @@ class Banner extends React.Component {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Banner);
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);
