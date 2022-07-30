@@ -25,9 +25,9 @@ class Banner extends React.Component {
 
     if (this.state.title.length > 2) {
       this.props.onTitleChanged(
-        this.state.title,
-        (page) => agent.Items.byTitle(this.state.title, page),
-        agent.Items.byTitle(this.state.title)
+        title,
+        (page) => agent.Items.byTitle(title, page),
+        agent.Items.byTitle(title)
       );
     }
   }
