@@ -40,6 +40,7 @@ const reducer = (state = {}, action) => {
     case APPLY_TITLE_FILTER:
       return {
         ...state,
+        title: action.title,
         pager: action.pager,
         items: action.payload.items,
         itemsCount: action.payload.itemsCount,
