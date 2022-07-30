@@ -19,6 +19,7 @@ class Banner extends React.Component {
   }
 
   handleChange(event) {
+    event.preventDefault();
     let title = event.target.value;
     this.setState({ title: title });
 

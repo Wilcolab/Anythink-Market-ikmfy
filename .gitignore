@@ -7,6 +7,7 @@
 /.wilco-helpers/node_modules
 /.pnp
 .pnp.js
+*.swp
 
 # testing
 /coverage
