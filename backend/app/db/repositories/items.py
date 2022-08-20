@@ -314,7 +314,7 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
             title=title,
             description=item_row["description"],
             body=item_row["body"],
-            image=item,
+            image=image,
             seller=await self._profiles_repo.get_profile_by_username(
                 username=seller_username,
                 requested_user=requested_user,
