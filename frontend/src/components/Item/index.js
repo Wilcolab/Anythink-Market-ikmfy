@@ -53,7 +53,7 @@ class Item extends React.Component {
                 src={
                   this.props.item.image > 0
                     ? this.props.item.image
-                    : "placeholder.png"
+                    : "/placeholder.png"
                 }
                 alt={this.props.item.title}
                 className="item-img"
