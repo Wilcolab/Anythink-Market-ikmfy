@@ -20,6 +20,7 @@ async def get_profile_by_username_from_path(
     try:
         return await profiles_repo.get_profile_by_username(
             username=username,
+            isVerified=user.isVerified,
             requested_user=user,
         )
     except EntityDoesNotExist:
