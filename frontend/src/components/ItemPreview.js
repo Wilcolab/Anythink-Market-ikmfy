@@ -31,7 +31,10 @@ const ItemPreview = (props) => {
 
   let verified_seller;
   if (item.seller.isVerified) {
-    verified_seller = <img src="/public/verified_seller.svg" alt="verfied seller"/>
+    verified_seller = <span>
+      <img src="verified_seller.svg" alt="verfied seller"/>
+      TOP SELLER
+      </span>
   }
 
   return (
