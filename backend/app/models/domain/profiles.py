@@ -8,4 +8,4 @@ class Profile(RWModel):
     bio: str = ""
     image: Optional[str] = None
     following: bool = False
-    isVerfied: bool = False
+    isVerified: bool = False
