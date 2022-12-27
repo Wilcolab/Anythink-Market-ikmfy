@@ -29,6 +29,11 @@ const ItemPreview = (props) => {
     }
   };
 
+  let verified_seller;
+  if (item.seller.isVerified) {
+    verified_seller = <img src="/public/verified_seller.svg" alt="verfied seller"/>
+  }
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -53,6 +58,7 @@ const ItemPreview = (props) => {
               alt={item.seller.username}
               className="user-pic rounded-circle pr-1"
             />
+            {verified_seller}
           </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
