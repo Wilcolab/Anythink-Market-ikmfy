@@ -15,7 +15,7 @@ branch_labels = None
 depends_on = None
 
 def upgrade():
-    op.add_column('users', sa.Column('is_verfied', sa.Boolean))
+  op.add_column('users', sa.Column('is_verified', sa.Boolean, server_default=sa.false()))
 
 def downgrade():
-    op.drop_column('users', 'is_verified')
+  op.drop_column('users', 'is_verified')
